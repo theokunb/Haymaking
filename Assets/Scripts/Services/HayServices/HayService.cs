@@ -1,6 +1,5 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
+using UnityEngine;
 
 public class HayService : IService
 {
@@ -13,14 +12,19 @@ public class HayService : IService
         _allHayItems = new List<IHayItem>();
     }
 
-
     public void Add(IHayItem item)
     {
         _allHayItems.Add(item);
     }
 
-    public void SelectCurrent()
+    public void SelectItem(int index)
     {
-        CurrentHayItem = _allHayItems.FirstOrDefault();
+        if (index >= _allHayItems.Count)
+        {
+            Debug.Log("invalid item index");
+            return;
+        }
+
+        CurrentHayItem = _allHayItems[index];
     }
 }
