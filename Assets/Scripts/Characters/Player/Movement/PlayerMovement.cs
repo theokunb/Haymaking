@@ -23,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
     {
         var forward = Input.GetAxisRaw("Vertical");
         var horizontal = Input.GetAxisRaw("Horizontal");
-        _playerMovementService.Movement(forward, horizontal, Time.deltaTime, playerTransform, speed);
+        _playerMovementService.Movement(forward, horizontal, Time.deltaTime, playerTransform, speed, animator);
     }
 
     public void Movement()
