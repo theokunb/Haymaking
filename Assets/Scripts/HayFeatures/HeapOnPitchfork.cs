@@ -35,4 +35,15 @@ public class HeapOnPitchfork : IService
     {
 
     }
+
+    public void SellSay()
+    {
+        AccumulatedHeap = 0;
+        Debug.Log("Всё сено продано");
+    }
+
+    public int GetAccumulatedHeap()
+    {
+        return AccumulatedHeap;
+    }
 }
