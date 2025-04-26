@@ -33,6 +33,12 @@ public class HayService : IService
         }
 
         CurrentHayItem = _allHayItems[index];
+
+        var handItemVisitor = ServiceLocator.Instance.GetService<IHandItemVisitor>();
+        if(handItemVisitor != null)
+        {
+            CurrentHayItem.Accept(handItemVisitor);
+        }
     }
 
     public void SetHayItem (int index, IHayItem item) 

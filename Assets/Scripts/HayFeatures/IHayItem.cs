@@ -5,4 +5,6 @@ public interface IHayItem
     int GetPerformHaysCount();
     float GetSpeed();
     HayStatus GetTargetHasyStatus();
+
+    public void Accept(IHandItemVisitor handItemVisitor);
 }

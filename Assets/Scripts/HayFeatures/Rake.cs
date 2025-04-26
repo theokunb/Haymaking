@@ -7,6 +7,11 @@ public class Rake : IHayItem
     public int GrabCount { get; set; }
     public float Speed { get; set; }
 
+    public void Accept(IHandItemVisitor handItemVisitor)
+    {
+        handItemVisitor.Visit(this);
+    }
+
     public int GetPerformHaysCount()
     {
         return GrabCount;
