@@ -159,7 +159,7 @@ TerrainCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_TerrainData: {fileID: 15600000, guid: 2df420157ab3a684dbd02b1034d2cb4b, type: 2}
+  m_TerrainData: {fileID: 15600000, guid: be2863aefc6b5e8458bb9932a445cc75, type: 2}
   m_EnableTreeColliders: 1
 --- !u!218 &178982308
 Terrain:
@@ -170,7 +170,7 @@ Terrain:
   m_GameObject: {fileID: 178982306}
   m_Enabled: 1
   serializedVersion: 6
-  m_TerrainData: {fileID: 15600000, guid: 2df420157ab3a684dbd02b1034d2cb4b, type: 2}
+  m_TerrainData: {fileID: 15600000, guid: be2863aefc6b5e8458bb9932a445cc75, type: 2}
   m_TreeDistance: 5000
   m_TreeBillboardDistance: 50
   m_TreeCrossFadeLength: 5
@@ -230,8 +230,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 273352630}
-  - component: {fileID: 273352632}
   - component: {fileID: 273352631}
+  - component: {fileID: 273352632}
+  - component: {fileID: 273352633}
   m_Layer: 0
   m_Name: Hay (3)
   m_TagString: Untagged
@@ -289,6 +290,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spriteRenderer: {fileID: 370944716}
+--- !u!114 &273352633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 273352629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5448bcf062569e04abf3da96915526dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _baseHealth: 3
 --- !u!1 &273520528
 GameObject:
   m_ObjectHideFlags: 0
@@ -550,8 +564,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 382496505}
-  - component: {fileID: 382496507}
   - component: {fileID: 382496506}
+  - component: {fileID: 382496507}
+  - component: {fileID: 382496508}
   m_Layer: 0
   m_Name: Hay (4)
   m_TagString: Untagged
@@ -609,6 +624,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spriteRenderer: {fileID: 860239407}
+--- !u!114 &382496508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 382496504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5448bcf062569e04abf3da96915526dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _baseHealth: 3
 --- !u!1 &531957405
 GameObject:
   m_ObjectHideFlags: 0
@@ -748,8 +776,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1051611665}
-  - component: {fileID: 1051611669}
   - component: {fileID: 1051611671}
+  - component: {fileID: 1051611669}
+  - component: {fileID: 1051611672}
   m_Layer: 0
   m_Name: Hay
   m_TagString: Untagged
@@ -807,6 +836,19 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.50000006
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1051611672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1051611664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5448bcf062569e04abf3da96915526dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _baseHealth: 3
 --- !u!1 &1492343939
 GameObject:
   m_ObjectHideFlags: 0
@@ -816,8 +858,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1492343940}
-  - component: {fileID: 1492343942}
   - component: {fileID: 1492343941}
+  - component: {fileID: 1492343942}
+  - component: {fileID: 1492343943}
   m_Layer: 0
   m_Name: Hay (1)
   m_TagString: Untagged
@@ -875,6 +918,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spriteRenderer: {fileID: 273520530}
+--- !u!114 &1492343943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1492343939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5448bcf062569e04abf3da96915526dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _baseHealth: 3
 --- !u!1 &1504541120
 GameObject:
   m_ObjectHideFlags: 0
@@ -1070,8 +1126,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1735441359}
-  - component: {fileID: 1735441361}
   - component: {fileID: 1735441360}
+  - component: {fileID: 1735441361}
+  - component: {fileID: 1735441362}
   m_Layer: 0
   m_Name: Hay (2)
   m_TagString: Untagged
@@ -1129,6 +1186,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spriteRenderer: {fileID: 314490065}
+--- !u!114 &1735441362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1735441358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5448bcf062569e04abf3da96915526dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _baseHealth: 3
 --- !u!1 &1791360713
 GameObject:
   m_ObjectHideFlags: 0

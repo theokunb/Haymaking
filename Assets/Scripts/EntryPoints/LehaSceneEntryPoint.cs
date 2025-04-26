@@ -14,12 +14,15 @@ public class LehaSceneEntryPoint : EntryPoint
         {
             CutRadius = 10,
             CutHaysCount = 2,
+            Speed = 1,
+            Damage = 1,
         };
         hayService.Add(scythe);
         var rake = new Rake()
         {
             Radius = 10,
-            GrabCount = 9
+            GrabCount = 9,
+            Speed = 1
         };
         hayService.Add(rake);
 
