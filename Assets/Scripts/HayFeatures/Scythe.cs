@@ -40,4 +40,9 @@ public class Scythe : IHayItem
     {
         return Speed;
     }
+
+    public void Accept(IHandItemVisitor handItemVisitor)
+    {
+        handItemVisitor.Visit(this);
+    }
 }
