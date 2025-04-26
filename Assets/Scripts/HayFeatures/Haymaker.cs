@@ -2,14 +2,14 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class Haymaker : MonoBehaviour
+public class Haymaker : MonoBehaviour, IService
 {
     private HayService _hayService;
 
     private void Start()
     {
         _hayService = ServiceLocator.Instance.GetService<HayService>();
-        _hayService.SelectCurrent();
+        ServiceLocator.Instance.Register(this);
     }
 
     private void Update()
@@ -20,23 +20,23 @@ public class Haymaker : MonoBehaviour
         }
     }
 
+    private void OnDestroy()
+    {
+        ServiceLocator.Instance.Unregister<Haymaker>();
+    }
+
     private void Haymaking()
     {
-        var colliders = Physics.OverlapSphere(transform.position, _hayService.CurrentHayItem.GetRadius());
-        var hays = new List<KeyValuePair<float, Hay>>();
+        var hays = Physics.OverlapSphere(transform.position, _hayService.CurrentHayItem.GetRadius())
+            .Select(x => x.GetComponent<Hay>())
+            .Where(x => x!= null)
+            .Where(x => x.HayStatus == _hayService.CurrentHayItem.GetTargetHasyStatus());
+        var cuttingHays = new List<KeyValuePair<float, Hay>>();
 
-        foreach(var collider in colliders)
+        foreach(var element in hays)
         {
-            if(collider.TryGetComponent(out Hay hay))
-            {
-                if (hay.Performed)
-                {
-                    continue;
-                }
-
-                var distance = Vector3.Distance(transform.position, hay.transform.position);
-                hays.Add(new KeyValuePair<float, Hay>(distance, hay));
-            }
+            var distance = Vector3.Distance(transform.position, element.transform.position);
+            cuttingHays.Add(new KeyValuePair<float, Hay>(distance, element));
         }
 
         if(_hayService.CurrentHayItem == null)
@@ -45,7 +45,7 @@ public class Haymaker : MonoBehaviour
             return;
         }
 
-        _hayService.CurrentHayItem.Cut(hays
+        _hayService.CurrentHayItem.ProcessHays(cuttingHays
             .OrderBy(x => x.Key)
             .Select(x => x.Value)
             .ToArray());
