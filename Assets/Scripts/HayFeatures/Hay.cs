@@ -6,10 +6,10 @@ public class Hay : MonoBehaviour
 {
     [SerializeField] private SpriteRenderer _spriteRenderer;
     
-    private HayStatus _hayStatus;
     private Sprite _normalHay;
     private Sprite _cuttedHay;
 
+    protected HayStatus _hayStatus;
     public HayStatus HayStatus => _hayStatus;
 
     private void Start()

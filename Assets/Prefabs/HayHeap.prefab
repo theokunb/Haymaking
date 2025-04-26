@@ -303,7 +303,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c78d4db09aa90a4f862aa8bcafccf41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _score: {fileID: 5659701626235862517}
+  _spriteRenderer: {fileID: 3792891618863513702}
+  _scoreText: {fileID: 5659701626235862517}
   _canvas: {fileID: 3071245630478146730}
 --- !u!1 &7480934015513786542
 GameObject:

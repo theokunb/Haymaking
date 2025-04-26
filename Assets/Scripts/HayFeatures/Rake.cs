@@ -45,6 +45,7 @@ public class Rake : IHayItem
         var score = cutHays.Count();
         var heapPrefab = ServiceLocator.Instance.GetService<HayHeap>();
         var heap = Object.Instantiate(heapPrefab, firstHay.transform.position, Quaternion.identity);
+
         heap.SetHeapScore(score);
     }
 }

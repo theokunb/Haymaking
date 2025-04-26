@@ -2,13 +2,14 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class Haymaker : MonoBehaviour
+public class Haymaker : MonoBehaviour, IService
 {
     private HayService _hayService;
 
     private void Start()
     {
         _hayService = ServiceLocator.Instance.GetService<HayService>();
+        ServiceLocator.Instance.Register(this);
     }
 
     private void Update()
@@ -17,6 +18,11 @@ public class Haymaker : MonoBehaviour
         {
             Haymaking();
         }
+    }
+
+    private void OnDestroy()
+    {
+        ServiceLocator.Instance.Unregister<Haymaker>();
     }
 
     private void Haymaking()

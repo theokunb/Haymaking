@@ -2,5 +2,6 @@
 {
     Normal,
     Cutted,
-    Grabbed
+    Grabbed,
+    Heap
 }
