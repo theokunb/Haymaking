@@ -25,7 +25,7 @@ public class HeapOnPitchfork : IService
         var heapPrefab = ServiceLocator.Instance.GetService<HayHeap>();
         var haymaker = ServiceLocator.Instance.GetService<Haymaker>();
 
-        var heap = Object.Instantiate(heapPrefab, haymaker.transform.position, Quaternion.identity);
+        var heap = Object.Instantiate(heapPrefab, new Vector3(haymaker.transform.position.x, 0, haymaker.transform.position.z), Quaternion.identity);
         heap.SetHeapScore(AccumulatedHeap);
 
         AccumulatedHeap = 0;

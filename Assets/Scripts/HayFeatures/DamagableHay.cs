@@ -10,11 +10,13 @@ public class DamagableHay : MonoBehaviour
 
     private void Start()
     {
+        _healthBar.color = new Color(1, 1, 1, 0);
         _currentHealth = _baseHealth;
     }
 
     public void TakeDamageFrom(Scythe scythe)
     {
+        _healthBar.color = new Color(1, 1, 1, 1);
         _currentHealth -= scythe.Damage;
         _healthBar.fillAmount = _currentHealth / _baseHealth;
 
