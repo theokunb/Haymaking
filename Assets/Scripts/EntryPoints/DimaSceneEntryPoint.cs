@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class DimaSceneEntryPoint : EntryPoint
 {
-    
-    void Start()
+    private void Awake()
     {
-        
+        var playerMovementService = new PlayerMovementService();
+
+        ServiceLocator.Instance.Register(playerMovementService);
     }
 
-    
-    void Update()
+    private void OnDestroy()
     {
-        
+        ServiceLocator.Instance.Unregister<PlayerMovementService>();
     }
 }
