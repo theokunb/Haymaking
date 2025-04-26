@@ -6,6 +6,11 @@ public class Pitchforks : IHayItem
     public float Radius { get; set; }
     public float Speed { get; set; }
 
+    public void Accept(IHandItemVisitor handItemVisitor)
+    {
+        handItemVisitor.Visit(this);
+    }
+
     public int GetPerformHaysCount()
     {
         return 1;
