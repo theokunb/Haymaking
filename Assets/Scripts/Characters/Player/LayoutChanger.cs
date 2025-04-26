@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class LayoutChanger : MonoBehaviour
 {
+    [SerializeField] private ActionType _actionType;
     [SerializeField] private SpriteRenderer _targetSpriteRenderer;
 
     private int _orderLayout;
@@ -22,7 +23,15 @@ public class LayoutChanger : MonoBehaviour
 
         foreach (var spriteRenderer in spriteRenderers)
         {
-            spriteRenderer.sortingOrder = _orderLayout + 1;
+            if(_actionType == ActionType.Adding)
+            {
+                spriteRenderer.sortingOrder = _orderLayout + 2;
+            }
+            else
+            {
+
+                spriteRenderer.sortingOrder = _orderLayout - 2;
+            }
         }
     }
 
@@ -40,4 +49,10 @@ public class LayoutChanger : MonoBehaviour
             spriteRenderer.sortingOrder = _orderLayout;
         }
     }
+}
+
+public enum ActionType
+{
+    Adding,
+    Substracting
 }
