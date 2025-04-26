@@ -1,10 +1,11 @@
 ﻿using System.Linq;
-using UnityEngine;
 
 public class Scythe : IHayItem
 {
     public float CutRadius { get; set; }
     public int CutHaysCount { get; set; }
+    public float Speed { get; set; }
+    public float Damage { get; set; }
 
     public void ProcessHays(params Hay[] hays)
     {
@@ -12,7 +13,10 @@ public class Scythe : IHayItem
 
         foreach(var hay in cutHays)
         {
-            hay.Cut();
+            if(hay.TryGetComponent(out DamagableHay damagableHay))
+            {
+                damagableHay.TakeDamageFrom(this);
+            }
         }
     }
 
@@ -30,46 +34,9 @@ public class Scythe : IHayItem
     {
         return HayStatus.Normal;
     }
-}
 
-public class Rake : IHayItem
-{
-    public float Radius { get; set; }
-    public int GrabCount { get; set; }
-
-    public int GetPerformHaysCount()
+    public float GetSpeed()
     {
-        return GrabCount;
-    }
-
-    public float GetRadius()
-    {
-        return Radius;
-    }
-
-    public HayStatus GetTargetHasyStatus()
-    {
-        return HayStatus.Cutted;
-    }
-
-    public void ProcessHays(params Hay[] hays)
-    {
-        var cutHays = hays.Take(GrabCount);
-
-        foreach (var hay in cutHays)
-        {
-            hay.Grab();
-        }
-
-        var firstHay = hays.FirstOrDefault();
-        if(firstHay == null)
-        {
-            return;
-        }
-
-        var score = cutHays.Count();
-        var heapPrefab = ServiceLocator.Instance.GetService<HayHeap>();
-        var heap = Object.Instantiate(heapPrefab, firstHay.transform.position, Quaternion.identity);
-        heap.SetHeapScore(score);
+        return Speed;
     }
 }
