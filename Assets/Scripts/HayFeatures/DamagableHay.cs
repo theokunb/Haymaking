@@ -28,6 +28,7 @@ public class DamagableHay : MonoBehaviour
             {
                 return;
             }
+            _healthBar.gameObject.SetActive(false);
             hay.Cut();
         }
     }
