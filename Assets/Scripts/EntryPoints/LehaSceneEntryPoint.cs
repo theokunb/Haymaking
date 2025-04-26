@@ -7,6 +7,7 @@ public class LehaSceneEntryPoint : EntryPoint
     private void Awake()
     {
         var hayService = new HayService();
+        var heapOnPitchfork = new HeapOnPitchfork();
 
         //read config file
 
@@ -25,14 +26,22 @@ public class LehaSceneEntryPoint : EntryPoint
             Speed = 1
         };
         hayService.Add(rake);
+        var pitchforks = new Pitchforks()
+        {
+            Radius = 5,
+            Speed = 10
+        };
+        hayService.Add(pitchforks);
 
         ServiceLocator.Instance.Register(hayService);
         ServiceLocator.Instance.Register(_heapPrefab);
+        ServiceLocator.Instance.Register(heapOnPitchfork);
     }
 
     private void OnDestroy()
     {
         ServiceLocator.Instance.Unregister<HayService>();
         ServiceLocator.Instance.Unregister<HayHeap>();
+        ServiceLocator.Instance.Unregister<HeapOnPitchfork>();
     }
 }

@@ -1,20 +1,23 @@
 using TMPro;
 using UnityEngine;
 
-public class HayHeap : MonoBehaviour, IService
+public class HayHeap : Hay, IService
 {
-    [SerializeField] private TMP_Text _score;
+    [SerializeField] private TMP_Text _scoreText;
     [SerializeField] private Canvas _canvas;
 
+    public int Score { get; private set; }
 
     private void Start()
     {
         var camera = Camera.main;
         _canvas.worldCamera = camera;
+        _hayStatus = HayStatus.Heap;
     }
 
     public void SetHeapScore(int score)
     {
-        _score.text = score.ToString();
+        Score = score;
+        _scoreText.text = score.ToString();
     }
 }
