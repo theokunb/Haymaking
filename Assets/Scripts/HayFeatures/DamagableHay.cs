@@ -1,7 +1,9 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DamagableHay : MonoBehaviour
 {
+    [SerializeField] private Image _healthBar;
     [SerializeField] private float _baseHealth;
 
     private float _currentHealth;
@@ -14,6 +16,7 @@ public class DamagableHay : MonoBehaviour
     public void TakeDamageFrom(Scythe scythe)
     {
         _currentHealth -= scythe.Damage;
+        _healthBar.fillAmount = _currentHealth / _baseHealth;
 
         Debug.Log($"{gameObject.name} taking damage health: {_currentHealth}");
 
