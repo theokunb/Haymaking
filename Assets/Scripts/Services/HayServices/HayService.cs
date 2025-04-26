@@ -34,4 +34,10 @@ public class HayService : IService
 
         CurrentHayItem = _allHayItems[index];
     }
+
+    public void SetHayItem (int index, IHayItem item) 
+    {
+        _allHayItems[index] = item;
+        Debug.Log($"{index} заменена");
+    }
 }

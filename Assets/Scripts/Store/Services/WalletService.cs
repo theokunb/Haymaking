@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WalletService : IService
 {
-    private int _moneyCount = 0;
+    private int _moneyCount = 1000;
 
     public WalletService() 
     { 
