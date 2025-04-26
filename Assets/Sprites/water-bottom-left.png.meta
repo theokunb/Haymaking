@@ -113,12 +113,12 @@ TextureImporter:
       name: water-bottom-left_0
       rect:
         serializedVersion: 2
-        x: 118
+        x: 117
         y: 116
-        width: 138
+        width: 139
         height: 140
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -134,12 +134,12 @@ TextureImporter:
       name: water-bottom-left_1
       rect:
         serializedVersion: 2
-        x: 376
+        x: 373
         y: 123
-        width: 136
+        width: 139
         height: 133
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -155,12 +155,12 @@ TextureImporter:
       name: water-bottom-left_2
       rect:
         serializedVersion: 2
-        x: 633
+        x: 629
         y: 123
-        width: 135
+        width: 139
         height: 133
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
