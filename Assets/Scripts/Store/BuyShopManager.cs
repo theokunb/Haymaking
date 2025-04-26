@@ -6,9 +6,6 @@ public class BuyShopManager : MonoBehaviour
     private BuyShopService _buyShopService;
     [SerializeField]
     private GameObject productUIBlock;
-    private Image iconProduct;
-    private Text productText;
-    private Text productPrice;
 
     [SerializeField]
     private Transform productsPanel;
@@ -49,11 +46,14 @@ public class BuyShopManager : MonoBehaviour
         foreach (var product in _buyShopService.products)
         {
             GameObject productRow = Instantiate(productUIBlock, productsPanel);
-            iconProduct = productRow.transform.Find("ProductIcon").GetComponent<Image>();
+            var iconProduct = productRow.transform.Find("ProductIcon").GetComponent<Image>();
             iconProduct.sprite = product.productIcon;
             
-            productText = productRow.transform.Find("Description").GetComponent<Text>();
+            var productText = productRow.transform.Find("Description").GetComponent<Text>();
             productText.text = product.description;
+
+            var priceText = productRow.transform.Find("PriceText").GetComponent<Text>();
+            priceText.text = product.price.ToString();
 
             var productButton = productRow.transform.Find("Button");
             var indexLocal = index;
