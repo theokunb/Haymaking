@@ -6,10 +6,10 @@ public class LehaSceneEntryPoint : EntryPoint
 
     private void Awake()
     {
+        var inventoryConfig = Resources.Load<InventorySettings>("InventoryConfig");
+
         var hayService = new HayService();
         var heapOnPitchfork = new HeapOnPitchfork();
-
-        //read config file
 
         var scythe = new Scythe()
         {
@@ -18,20 +18,20 @@ public class LehaSceneEntryPoint : EntryPoint
             Speed = 1,
             Damage = 1,
         };
-        hayService.Add(scythe);
+        hayService.Add(inventoryConfig.ScytheIndex, scythe);
         var rake = new Rake()
         {
             Radius = 10,
             GrabCount = 9,
             Speed = 1
         };
-        hayService.Add(rake);
+        hayService.Add(inventoryConfig.RakeIndex, rake);
         var pitchforks = new Pitchforks()
         {
             Radius = 5,
             Speed = 10
         };
-        hayService.Add(pitchforks);
+        hayService.Add(inventoryConfig.PitchforksIndex, pitchforks);
 
         ServiceLocator.Instance.Register(hayService);
         ServiceLocator.Instance.Register(_heapPrefab);
