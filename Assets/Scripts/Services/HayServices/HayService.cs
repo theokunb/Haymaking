@@ -3,18 +3,25 @@ using UnityEngine;
 
 public class HayService : IService
 {
-    private List<IHayItem> _allHayItems;
+    private Dictionary<int, IHayItem> _allHayItems;
 
     public IHayItem CurrentHayItem { get; private set; }
 
     public HayService()
     {
-        _allHayItems = new List<IHayItem>();
+        _allHayItems = new Dictionary<int, IHayItem>();
     }
 
-    public void Add(IHayItem item)
+    public void Add(int index, IHayItem item)
     {
-        _allHayItems.Add(item);
+        if(_allHayItems.ContainsKey(index))
+        {
+            _allHayItems[index] = item;
+        }
+        else
+        {
+            _allHayItems.Add(index, item);
+        }
     }
 
     public void SelectItem(int index)
