@@ -22,14 +22,19 @@ public class SellShopService : IService
 
         if (_heapOnPitchfork.GetAccumulatedHeap() > 0)
         {
-            _heapOnPitchfork.SellSay();
             var earnedMoney = _heapOnPitchfork.GetAccumulatedHeap() * priceOfOnePiece;
+            _heapOnPitchfork.SellSay();
             _walletService.AddMoney(earnedMoney);
             Debug.Log($"SellShopService - заработано {earnedMoney}");
             return true;
         }
 
         return false;
+    }
+
+    public int GetPriceOfOnePiece()
+    {
+        return priceOfOnePiece;
     }
 
 }
