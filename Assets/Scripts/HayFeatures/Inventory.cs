@@ -20,7 +20,6 @@ public class Inventory : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            Debug.Log("switch to scythe");
             _hayService.SelectItem(_inventorySettings.ScytheIndex);
             _heapOnPitchfork.DropHeap();
 

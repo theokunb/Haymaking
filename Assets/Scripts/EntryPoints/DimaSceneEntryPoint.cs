@@ -4,10 +4,37 @@ using UnityEngine;
 
 public class DimaSceneEntryPoint : EntryPoint
 {
+    [SerializeField] HayHeap _heapPrefab;
     private void Awake()
     {
+        var inventoryConfig = Resources.Load<InventorySettings>("InventoryConfig");
         var playerMovementService = new PlayerMovementService();
         var hayService = new HayService();
+        var scythe = new Scythe()
+        {
+            CutRadius = 10,
+            CutHaysCount = 2,
+            Speed = 1,
+            Damage = 1,
+        };
+
+        hayService.Add(inventoryConfig.ScytheIndex, scythe);
+        var rake = new Rake()
+        {
+            Radius = 10,
+            GrabCount = 9,
+            Speed = 1
+        };
+
+        hayService.Add(inventoryConfig.RakeIndex, rake);
+        var pitchforks = new Pitchforks()
+        {
+            Radius = 5,
+            Speed = 10
+        };
+
+        hayService.Add(inventoryConfig.PitchforksIndex, pitchforks);
+
         var walletService = new WalletService();
         var heapOnPitchfork = new HeapOnPitchfork();
         var sellShopService = new SellShopService(walletService, heapOnPitchfork);
@@ -18,6 +45,7 @@ public class DimaSceneEntryPoint : EntryPoint
         ServiceLocator.Instance.Register(sellShopService);
         ServiceLocator.Instance.Register(buyShopService);
         ServiceLocator.Instance.Register(hayService);
+        ServiceLocator.Instance.Register(_heapPrefab);
     }
 
     private void OnDestroy()

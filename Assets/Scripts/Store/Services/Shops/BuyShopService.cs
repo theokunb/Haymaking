@@ -19,24 +19,35 @@ public class BuyShopService : IService
                     Speed = 1,
                     Damage = 2
                 },
-                price = 100,
-                type = 1,
+                price = 150,
+                type = 0,
                 productIcon = Resources.Load<Sprite>("reaper lvl 2"),
                 description = "Коса 2 уровня",
             },
             new Product
             {
-                hayItem = new Scythe() // 2 уровень косы
+                hayItem = new Rake() // 2 уровень грабли
                 {
-                    CutRadius = 15,
-                    CutHaysCount = 2,
-                    Speed = 1,
-                    Damage = 2
+                    Radius = 15,
+                    GrabCount = 9,
+                    Speed = 1
                 },
-                price = 100,
+                price = 200,
                 type = 1,
-                productIcon = Resources.Load<Sprite>("reaper lvl 2"),
-                description = "Коса 2 уровня",
+                productIcon = Resources.Load<Sprite>("rake lvl 2"),
+                description = "Грабли 2 уровня",
+            },
+            new Product
+            {
+                hayItem = new Pitchforks() // 2 уровень вил
+                {
+                    Radius = 5,
+                    Speed = 15
+                },
+                price = 200,
+                type = 2,
+                productIcon = Resources.Load<Sprite>("pike lvl 2"),
+                description = "Вилы 2 уровня",
             }
         };
     }
