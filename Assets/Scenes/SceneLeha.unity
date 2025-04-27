@@ -893,6 +893,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4336801492062754796, guid: f82a3ee46c1fff146bb1ef40a6cecaa1,
+        type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5342946278295693761, guid: f82a3ee46c1fff146bb1ef40a6cecaa1,
         type: 3}
       propertyPath: m_Name
@@ -901,6 +906,21 @@ PrefabInstance:
     - target: {fileID: 5675629436538875958, guid: f82a3ee46c1fff146bb1ef40a6cecaa1,
         type: 3}
       propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5988481178185148018, guid: f82a3ee46c1fff146bb1ef40a6cecaa1,
+        type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7128740223982461331, guid: f82a3ee46c1fff146bb1ef40a6cecaa1,
+        type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7306210982967685928, guid: f82a3ee46c1fff146bb1ef40a6cecaa1,
+        type: 3}
+      propertyPath: m_RaycastTarget
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

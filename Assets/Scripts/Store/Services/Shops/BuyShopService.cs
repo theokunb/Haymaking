@@ -8,6 +8,8 @@ public class BuyShopService : IService
     public readonly WalletService _walletService;
     public BuyShopService()
     {
+        var config = Resources.Load<InventorySettings>("InventoryConfig");
+
         products = new List<Product>
         {
             new Product
@@ -17,7 +19,8 @@ public class BuyShopService : IService
                     CutRadius = 15,
                     CutHaysCount = 2,
                     Speed = 1,
-                    Damage = 2
+                    Damage = 2,
+                    AudioClip = config.Scythe
                 },
                 price = 150,
                 type = 0,
@@ -30,7 +33,8 @@ public class BuyShopService : IService
                 {
                     Radius = 15,
                     GrabCount = 9,
-                    Speed = 1
+                    Speed = 1,
+                    AudioClip = config.Rake
                 },
                 price = 200,
                 type = 1,
@@ -42,7 +46,8 @@ public class BuyShopService : IService
                 hayItem = new Pitchforks() // 2 уровень вил
                 {
                     Radius = 5,
-                    Speed = 15
+                    Speed = 15,
+                    AudioClip = config.Pitchforks
                 },
                 price = 200,
                 type = 2,
@@ -62,6 +67,7 @@ public class BuyShopService : IService
         {
             wallet.SpendMoney(product.price);
             hayService.SetHayItem(product.type, product.hayItem);
+            hayService.SelectItem(product.type);
             Debug.Log($"Коса 2 уровня продан");
         }
         else
