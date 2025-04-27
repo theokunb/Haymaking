@@ -888,6 +888,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 207108146064967212, guid: f82a3ee46c1fff146bb1ef40a6cecaa1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 385755740521215707, guid: f82a3ee46c1fff146bb1ef40a6cecaa1,
         type: 3}
       propertyPath: m_UiScaleMode
@@ -901,31 +906,36 @@ PrefabInstance:
     - target: {fileID: 1962037156388733366, guid: f82a3ee46c1fff146bb1ef40a6cecaa1,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1962037156388733366, guid: f82a3ee46c1fff146bb1ef40a6cecaa1,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1962037156388733366, guid: f82a3ee46c1fff146bb1ef40a6cecaa1,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 600
       objectReference: {fileID: 0}
     - target: {fileID: 1962037156388733366, guid: f82a3ee46c1fff146bb1ef40a6cecaa1,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 1962037156388733366, guid: f82a3ee46c1fff146bb1ef40a6cecaa1,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 1962037156388733366, guid: f82a3ee46c1fff146bb1ef40a6cecaa1,
         type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: -83
+      objectReference: {fileID: 0}
+    - target: {fileID: 1972211311544918157, guid: f82a3ee46c1fff146bb1ef40a6cecaa1,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2291933573681480698, guid: f82a3ee46c1fff146bb1ef40a6cecaa1,
@@ -1061,7 +1071,7 @@ PrefabInstance:
     - target: {fileID: 5675629436538875958, guid: f82a3ee46c1fff146bb1ef40a6cecaa1,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: -323.58337
       objectReference: {fileID: 0}
     - target: {fileID: 6341328850069308710, guid: f82a3ee46c1fff146bb1ef40a6cecaa1,
         type: 3}
@@ -1092,6 +1102,11 @@ PrefabInstance:
     - target: {fileID: 7306210982967685928, guid: f82a3ee46c1fff146bb1ef40a6cecaa1,
         type: 3}
       propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7807053063220976135, guid: f82a3ee46c1fff146bb1ef40a6cecaa1,
+        type: 3}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
