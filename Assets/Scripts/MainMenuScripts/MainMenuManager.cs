@@ -13,6 +13,9 @@ public class MainMenuManager : MonoBehaviour
 
     [SerializeField]
     public GameObject backgroundMusicGameObject;
+
+    [SerializeField]
+    GameObject tutorialWindow;
     
     void Start()
     {
@@ -54,5 +57,10 @@ public class MainMenuManager : MonoBehaviour
             yield return null; // ∆дЄм следующего кадра
         }
         SceneManager.LoadScene("SceneLeha");
+    }
+
+    public void OpenTutorial()
+    {
+        tutorialWindow.active = true;
     }
 }
