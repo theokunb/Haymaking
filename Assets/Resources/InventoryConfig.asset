@@ -15,3 +15,8 @@ MonoBehaviour:
   _scytheIndex: 0
   _rakeIndex: 1
   _pitchforksIndex: 2
+  _scythe: {fileID: 8300000, guid: 7f082734e5103264790bbf53ad80403e, type: 3}
+  _rake: {fileID: 8300000, guid: 4c31f29f0350c1c4a93b2439281ee825, type: 3}
+  _pitchforks: {fileID: 0}
+  _steps:
+  - {fileID: 8300000, guid: 68e2a1fd4b2ac5743965cb09a59183d1, type: 3}

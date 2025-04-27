@@ -12,25 +12,28 @@ public class DimaSceneEntryPoint : EntryPoint
         var hayService = new HayService();
         var scythe = new Scythe()
         {
-            CutRadius = 10,
+            CutRadius = 2f,
             CutHaysCount = 2,
             Speed = 1,
             Damage = 1,
+            AudioClip = inventoryConfig.Scythe
         };
 
         hayService.Add(inventoryConfig.ScytheIndex, scythe);
         var rake = new Rake()
         {
-            Radius = 10,
+            Radius = 2,
             GrabCount = 9,
-            Speed = 1
+            Speed = 1,
+            AudioClip = inventoryConfig.Rake
         };
 
         hayService.Add(inventoryConfig.RakeIndex, rake);
         var pitchforks = new Pitchforks()
         {
-            Radius = 5,
-            Speed = 10
+            Radius = 2,
+            Speed = 10,
+            AudioClip = inventoryConfig.Pitchforks
         };
 
         hayService.Add(inventoryConfig.PitchforksIndex, pitchforks);

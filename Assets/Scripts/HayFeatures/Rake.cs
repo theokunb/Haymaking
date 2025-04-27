@@ -6,6 +6,7 @@ public class Rake : IHayItem
     public float Radius { get; set; }
     public int GrabCount { get; set; }
     public float Speed { get; set; }
+    public AudioClip AudioClip { get; set; }
 
     public void Accept(IHandItemVisitor handItemVisitor)
     {
@@ -46,6 +47,9 @@ public class Rake : IHayItem
         {
             return;
         }
+
+        var soundService = ServiceLocator.Instance.GetService<SoundService>();
+        soundService.PlaySound(AudioClip);
 
         var score = cutHays.Count();
         var heapPrefab = ServiceLocator.Instance.GetService<HayHeap>();

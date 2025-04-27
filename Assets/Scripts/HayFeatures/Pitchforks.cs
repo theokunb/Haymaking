@@ -5,6 +5,7 @@ public class Pitchforks : IHayItem
 {
     public float Radius { get; set; }
     public float Speed { get; set; }
+    public AudioClip AudioClip { get; set; }
 
     public void Accept(IHandItemVisitor handItemVisitor)
     {
@@ -39,6 +40,9 @@ public class Pitchforks : IHayItem
         {
             return;
         }
+
+        var soundService = ServiceLocator.Instance.GetService<SoundService>();
+        soundService.PlaySound(AudioClip);
 
         var heapOnPitchfork = ServiceLocator.Instance.GetService<HeapOnPitchfork>();
         heapOnPitchfork.AddHeap(first.Score);

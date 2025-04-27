@@ -7,12 +7,16 @@ public class Scythe : IHayItem
     public int CutHaysCount { get; set; }
     public float Speed { get; set; }
     public float Damage { get; set; }
+    public AudioClip AudioClip { get; set; }
 
     public void ProcessHays(params Hay[] hays)
     {
         var cutHays = hays.Take(CutHaysCount);
 
-        foreach(var hay in cutHays)
+        var soundService = ServiceLocator.Instance.GetService<SoundService>();
+        soundService.PlaySound(AudioClip);
+
+        foreach (var hay in cutHays)
         {
             if(hay.TryGetComponent(out DamagableHay damagableHay))
             {
