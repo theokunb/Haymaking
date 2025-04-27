@@ -10,9 +10,13 @@ public class MainMenuManager : MonoBehaviour
     private Image sceneLoadAnimation;
     [SerializeField]
     private float animSpeed;
+
+    [SerializeField]
+    public GameObject backgroundMusicGameObject;
     
     void Start()
     {
+        DontDestroyOnLoad(backgroundMusicGameObject);
         StartCoroutine(StartGameAnimation());
     }
 
