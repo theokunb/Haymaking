@@ -4,14 +4,5 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes:
-  - enabled: 1
-<<<<<<< HEAD
-    path: Assets/Scenes/MainMenyScene.unity
-    guid: 1e71322c85315e5499a247e6a9cc8df4
-  - enabled: 1
-=======
->>>>>>> main
-    path: Assets/Scenes/SceneLeha.unity
-    guid: c3298f01cafddc947b1c478f7975f4a4
+  m_Scenes: []
   m_configObjects: {}

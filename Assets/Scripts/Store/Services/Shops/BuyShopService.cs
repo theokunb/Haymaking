@@ -41,6 +41,7 @@ public class BuyShopService : IService
                 productIcon = Resources.Load<Sprite>("rake lvl 2"),
                 description = "Грабли 2 уровня",
             },
+
             new Product
             {
                 hayItem = new Pitchforks() // 2 уровень вил
