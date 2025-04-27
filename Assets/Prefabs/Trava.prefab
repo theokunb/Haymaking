@@ -331,6 +331,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff5cb90d50d9d4a4383eb92b20502547, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _minRespawnTime: 10
+  _maxRespawnTime: 20
   _spriteRenderer: {fileID: 6792678614069373051}
   _animator: {fileID: 5234709403899161300}
 --- !u!136 &2700196097716811764
